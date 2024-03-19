@@ -1,0 +1,412 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template ~ 'tau-book.tex'
+% Version 2.2 (15/03/2024)
+%
+% Description: 
+% Tau-book is a LaTeX template that offers a clean and 
+% professional design for lab reports or academic papers.
+% The clarity of the code structure makes it easy to 
+% understand and modify for your needs. This template uses 
+% an easy-to-read font and high quality equations with "stix2".
+%
+% Author: 
+% Guillermo Jimenez (memo.notess1@gmail.com)
+% 
+% License:
+% Creative Commons CC BY 4.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     BIBLIOGRAPHY WITH BIBLATEX IN EXTERNAL EDITORS:
+% If the bibliography does not show up, try running the 
+% 'tau-book.cls' and 'tau.bib' file with biber from the 
+% MikTeX console or your preferred LaTeX distribution to 
+% generate the .aux files and (re)run tau-book.tex.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper,twoside]{tau-book}
+\usepackage[english]{babel}
+\usepackage{tau}
+
+
+%----------------------------------------------------------
+% Title
+%----------------------------------------------------------
+
+\title{Writing in \LaTeX\ with the Tau-book class: A compreh
+ensive guide}
+
+%----------------------------------------------------------
+% Authors, affiliations and professor
+%----------------------------------------------------------
+
+\author[a,1]{Author 1}
+\author[b,2]{Author 2}
+\author[b,c,3]{Author 3}
+
+%----------------------------------------------------------
+
+\affil[a]{Department of Mathematics}
+\affil[b]{Department of Biology}
+\affil[c]{University of Alpha}
+
+\professor{Responsible/Authority or other information}
+
+%----------------------------------------------------------
+% Footpage notes
+%----------------------------------------------------------
+
+\institution{College name}
+\ftitle{Writing in \LaTeX}
+\theday{March 15, 2024} % \today
+\etal{et al.}
+\course{\LaTeX\ Template}
+
+%----------------------------------------------------------
+
+\begin{document}
+	
+    \maketitle
+    \thispagestyle{firststyle}
+
+%----------------------------------------------------------
+% Abstract
+%----------------------------------------------------------
+
+\keywords{\LaTeX\ class, lab report, academic paper, tau-book class}
+
+%----------------------------------------------------------
+
+\begin{abstract}
+    The provided \LaTeX\ class, named ``tau-book.cls'', is a template for producing different types of documents, mainly lab reports or academic papers. Due to its clean and structured code, users can easily customize this class to suit their specific needs and preferences. In addition, it includes a custom package called ``tau.sty'' that incorporates essential document composition packages and more. The template also integrates with BibLaTeX, to manage the bibliography used. Notable features include custom colors and environments for including notes, information and code from Matlab, C, C++ and \TeX.
+\end{abstract}
+
+%----------------------------------------------------------
+% Table of contents (Uncomment to use)
+%----------------------------------------------------------
+
+% \tableofcontents
+
+%----------------------------------------------------------
+
+\section{Introduction}
+
+    \taustart{I}n the field of academic and professional document creation, having a well-designed template can greatly streamline the writing process and ensure a good final product. Introducing the ``tau-book'' class, a clean and minimalist template designed for a wide range of document types, mainly academic papers and lab reports. 
+
+    Due to its clean and structured code, users can easily customize this class to their specific needs and preferences. In addition, this template uses an easy-to-read and high-quality font in equations with ``stix2''. Notable features include custom colors and settings for including notes, information and code from Matlab, C, C++ and \TeX.
+    
+    \subsection{Explanation}	
+
+        Throughout this guide, we will teach how to use the ``tau-book'' template to ensure that users can take advantage of its potential. We will provide detailed instructions on customization options, allowing users to personalize the template to their specific needs and preferences.
+
+    \subsection{Specs}
+
+        The main document ``tau-book.tex'' is designed for \textit{A4paper}, \textit{letterpaper} or \textit{legalpaper}. Using the geometry package, which specifies margins and layout dimensions, the template ensures optimal readability and aesthetic appeal, with carefully selected settings.
+
+\section{Document styling}
+
+	\subsection{Title}
+	
+            The \verb*|\maketitle| command generates the title and author information section, including the professor/supervisor name, and affiliations.
+		
+            The title can be modified in ``tau-book.cls'' code in the \textit{title preferences} section. By default, ``tau-book'' centers the title, including authors, affiliations and additional information, however, you can change the command \verb*|\centering| to \verb*|\raggedright| in \verb*|\renewcommand{maketitle}| to move the title to the left or, modify it to your own preferences. 
+		
+            In addition, lines can be added to the title to obtain another style. These lines are defined by the command \verb*|\rule{\linewidth}{0.5pt}|, located in the same section.
+	
+	\subsection{Abstract}
+	
+            Then, the abstract and keywords are defined using the \verb*|\begin{abstract} \end{abstract}| and \verb*|\keywords| commands respectively.
+		
+    \subsection{Tau start}
+
+        In this \LaTeX\ document, we've included the \verb*|\taustart{}| command, which provides a personalized lettrine for the beginning of a paragraph. This command is defined with two parameters: the dropcap font size and the content of the lettrine itself. It is utilized within the introduction section to enhance the visual appeal and style of the article.
+
+        This attention to detail adds a touch of elegance and professionalism to the document, ensuring a captivating reading experience.
+
+    \subsection{Stix2 font package}
+
+        This \LaTeX\ template uses the \textbf{stix2} font package to maintain a clean and professional look. The stix2 font provides excellent legibility. By incorporating this font package, the document maintains a consistent and clean aesthetic throughout, especially when writing equations. 
+
+    \subsection{Table of contents}
+
+        The ``tau-book'' class provides a table of contents that presents a hierarchical structure that organizes the contents of the document. It begins with the main sections, followed by subsections that expand on those topics and, in turn, the subsubsections provide additional details. Each level of the table of contents provides a preview of the content and its location in the document, making it easier to navigate and understand it.
+        
+        In case of using the ToC, it is important to uncomment the \verb*|\tableofcontents| command (located in ``tau.book.tex'') so that it appears. In case you have deleted it, place the command after the abstract to avoid location problems.
+
+    \subsection{Header and footer}
+
+        Headers and footers are designed to provide relevant and contextual information about the paper. The header shows the title of the paper, while the footer contains details such as the institution, date, paper title and authors' surnames. This arrangement ensures that readers have access to key information at all times, making the document easier to understand and reference.
+    		
+        \subsubsection{Page numbering}
+    		
+            In ``tau-book.cls'' in the \textit{header and footer} section, the command \verb*|\pagenumbering{}| is located, which is used to modify the style of the page number. By default, ``tau-book'' sets it to Roman, however, it can be changed to arabic, roman, etc.
+        
+    \subsection{Caption}
+
+        \subsubsection{Figures}
+
+            The provided \verb*|\captionsetup[figure]| command customizes the appearance of captions for figures in \LaTeX\ documents. It adjusts various aspects of the caption style such as format, label separator, font style and size, justification, and label font size. This setup ensures that figure captions are presented in a consistent and visually pleasing manner throughout the document. For example, in Fig. \ref{fig:enter-label}, the caption will appear with the specified formatting.
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.8\columnwidth]{Figures/TeX.JPG}
+				\caption{Example of a figure}
+				\label{fig:enter-label}
+			\end{figure}
+
+		\subsubsection{Tables}
+
+            The \verb*|\captionsetup[table]| command customizes the appearance of the captions in the document. The default table caption will display the caption below, however, there is an alternative to display the caption above the table. For example, in Table \ref{tab:example}, the caption will appear with the specified formatting.
+        
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{cc}
+                    \textbf{Column 1} & \textbf{Column 2} \\
+                    \midrule
+                    Data 1 & Data 2 \\
+                    Data 3 & Data 4 \\
+                    \bottomrule
+                \end{tabular}
+                \caption{Small table example}
+                \label{tab:example}
+            \end{table}
+
+            To change the caption position, open the ``tau-book'' class code and find the \textit{table caption style} section then, change the position to above.
+            
+    \subsection{Equation}
+
+        The \textbf{amsmath} package, short for ``American Mathematical Society mathematics'', is an essential tool in \LaTeX\ for typesetting mathematical equations with precision and clarity. It extends LaTeX's native math typesetting capabilities by providing a comprehensive suite of environments and commands for mathematical notation.
+
+        \begin{equation}
+            \int_{0}^{\pi} \frac{x^2}{\sqrt{1 + x^4}} \sin(x) \, dx
+        \end{equation}
+
+    \begin{info}
+        The \textbf{amssymb} package was not necessary to include, because the stix2 font incorporates mathematical symbols for writing quality equations. In case you choose another font, uncomment the package in ``tau.sty'' code.
+    \end{info}
+
+    \section{Environment}
+
+        The ``tau-book'' class includes custom environments designed to enhance the presentation of information within documents. Among these custom environments are \textbf{info} and \textbf{note}, which are characterized by their minimalist and aesthetic design. However, users also have the option to include other custom environments such as \textbf{info2}, \textbf{link} and \textbf{warn} for different purposes. 
+
+        The \textbf{info} and \textbf{note} environments are particularly recommended for their clean and visually appealing appearance. The \textbf{info} environment provides a structured format for presenting informative content, while the \textbf{note} environment highlights important notes or remarks. Both environments feature a consistent design with a midnight blue background and bolded titles for clarity.
+
+        Additionally, the frame title is aligned to the left for improved readability. These attributes contribute to a cohesive and professional presentation of information within documents.  Users can take advantage of these customized environments to organize and convey information in an effective and visually appealing manner.
+
+        You may also costumize these environments located at the end of ``tau.sty'' personalized package (line 111-238).
+
+        \begin{note}
+            Only the \textbf{info} and \textbf{note} environments modify the title according to the selected language (english or spanish).
+        \end{note}
+
+\section{Coding}
+
+    The ``tau-book'' package includes the \textbf{listings} package, which offers versatile and customizable features for typesetting code snippets in \LaTeX\ documents. Specifically for C, C++, \TeX\ and MATLAB codes. The \textbf{listings} package allows users to present code blocks with syntax highlighting, line numbering, and various formatting options to enhance readability and comprehension.
+
+    For C and C++ codes, the \textbf{listings} package recognizes the syntax of these programming languages and highlights keywords, comments, and string literals accordingly. This makes it easier for readers to distinguish between different elements of the code and understand its structure. Additionally, line numbering can be enabled to provide reference points within the code snippet.
+
+    \lstinputlisting[caption=Example of C code., label={lst:listing-c}, language=C]{example.c}
+
+    Similarly, for MATLAB codes, the ``listings'' package offers syntax highlighting and line numbering, to the MATLAB language syntax.
+    
+    \lstinputlisting[caption=Example of matlab code., label={lst:listing-Mat}, language=Matlab]{example.m}
+    
+    You may modify the syntax colors to your preference in the \textit{listings defined styles} section in the ``tau-book.cls'' code (line 298-359).  
+
+\section{References}
+
+    In the ``tau-book'' class, the default formatting for references follows the IEEE style. This style is commonly used for technical documents, research papers, and scholarly articles in engineering fields. It provides a structured and standardized format for citing sources, making it easy to locate and reference relevant literature \cite{einstein}.
+
+    However, the ``tau-book'' class also offers the flexibility to customize the formatting of references through its internal settings. By modifying the settings in the ``tau-book.cls'' file, users can adjust the citation and bibliography styles to suit their specific preferences to the requirements of different publication guidelines.
+
+    At the end of the document, you will find an example of the default reference formatting \cite{dirac} in the ``tau-book'' class. Additionally, the ``tau.bib'' file provided can serve as an example for future citations. This BibTeX file contains sample bibliographic entries that demonstrate how to format references.
+
+\section{Updates log}
+
+    \subsection{Tau-book class - Version 1.0 (01/03/2024)}
+	
+        Launch of tau-book class, made especially for academic reports and articles.
+
+    \subsection{Tau-book class - Version 2.0 (03/03/2024)}
+
+        In version 2 of ``tau-book.cls'' new improvements and general fixes have been introduced. One of these major improvements is the table of contents, where it has been designed to have a style compatible with the template providing a more professional appearance and adapted to the user's needs. 
+
+        The subtitle formats have been modified, allowing for a more esthetically presentation of the document content. Finally, general corrections have been made to the document for the overall quality of the document.
+
+    \subsection{Tau-book class - Version 2.1 (04/03/2024)}
+
+        New adjustments were made to improve the readability and consistency of the document in ``tau-book.cls''. Now, all URLs in the references section have the same font format, ensuring a more uniform presentation.
+
+        In addition, we implemented corrections to the author names: when there are only two authors and you switch to spanish, the system automatically replaces ``and'' with ``y'', and when there are more than two authors, we have eliminated the use of ``y'' or ``and'' to improve aesthetics. Finally, kappa.sty has been renamed to tau.sty for more consistency with the class name.
+        
+    \subsection{Tau-book class - Version 2.2 (15/03/2024)}
+	
+        Now ``tau-book'' class is dressed in \textcolor{taublue}{midnight blue} (taublue) in the title, sections, references and more. The \verb*|\abscontent{}| command was removed and the abstract was modified directly, this helps us for a better fit in the text. The title is now centered and lines have been removed for cleaner formatting, but can still be enabled in ``tau-book.cls''. Modified colors and formatting when inserting code for better appearance. The note and info environments have changed color to match the document.
+        
+\section{Appendices}
+
+	\subsection{Environments preview}
+	
+            The codes and results of the different customized environments are shown below.
+		
+		\subsubsection{Note}
+		
+			\begin{lstlisting}[language=TeX, caption=Note environment code.]
+\newmdenv[
+backgroundcolor=taublue!22, 		% taublueback
+linecolor=taublue,					% taubluetext
+linewidth=0.7pt,
+frametitle=\vskip0pt\bfseries\notelanguage,
+frametitlerule=false,
+frametitlefont=\color{taublue}\bfseries,	% taubluetext
+frametitlealignment=\raggedright,
+innertopmargin=3pt,
+innerbottommargin=6pt,
+innerleftmargin=6pt,
+innerrightmargin=6pt,
+font=\normalfont,
+fontcolor=taublue,					% taubluetext
+frametitleaboveskip=3pt.
+]{note} \end{lstlisting}
+		
+			\begin{note}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum justo quis massa aliquet, ut ultrices quam bibendum.
+			\end{note}
+
+		\subsubsection{Info}
+		
+			\begin{lstlisting}[language=TeX, caption=Info environment code.]
+\newmdenv[
+backgroundcolor=taublue!22, 		% taublueback
+linecolor=taublue,					% taubluetext
+linewidth=0.7pt,
+frametitle=\vskip0pt\bfseries\infolanguage,
+frametitlerule=false,
+frametitlefont=\color{taublue}\bfseries,	% taubluetext
+frametitlealignment=\raggedright,
+innertopmargin=3pt,
+innerbottommargin=6pt,
+innerleftmargin=6pt,
+innerrightmargin=6pt,
+font=\normalfont,
+fontcolor=taublue,					% taubluetext
+frametitleaboveskip=3pt.
+]{info} \end{lstlisting}
+			
+			\begin{info}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum justo quis massa aliquet, ut ultrices quam bibendum.
+			\end{info}
+			
+		\subsubsection{info2}
+		
+			\begin{lstlisting}[language=TeX, caption=Info2 environment code.]
+\mdfdefinestyle{information}{
+	topline=false, bottomline=false,
+	leftline=false, rightline=false,
+	nobreak,
+	singleextra={%
+		\fill[taublue](P-|O)circle[radius=0.4em];			% black
+		\node at(P-|O){\color{white}\scriptsize\bf i};
+		\draw[very thick,color=taublue](P-|O)++(0,-0.8em)--(O);
+	}
+}
+
+\newenvironment{info2}[1][\color{taublue}Info:]{
+	\medskip
+	\begin{mdframed}[style=information]
+		\noindent{\textbf{#1}}
+	}{
+	\end{mdframed}
+} \end{lstlisting}
+			
+			\begin{info2}    
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum justo quis massa aliquet, ut ultrices quam bibendum.
+			\end{info2}
+			
+		\subsubsection{Warn}
+		
+			\begin{lstlisting}[language=TeX, caption=Warn environment code.]
+\mdfdefinestyle{warning}{
+	topline=false, bottomline=false,
+	leftline=false, rightline=false,
+	nobreak,
+	singleextra={%
+		\draw(P-|O)++(-0.5em,0)node(tmp1){};
+		\draw(P-|O)++(0.5em,0)node(tmp2){};
+		\fill[taublue,rotate around={45:(P-|O)}](tmp1)rectangle(tmp2);
+		\node at(P-|O){\color{white}\scriptsize\bf !};
+		\draw[very thick,color=taublue](P-|O)++(0,-1em)--(O);%--(O-|P);
+	}
+}
+
+\newenvironment{warn}[1][\color{taublue}Warn:]{
+	\medskip
+	\begin{mdframed}[style=warning]
+		\noindent{\textbf{#1}}
+	}{
+	\end{mdframed}
+} \end{lstlisting}
+
+			\begin{warn}
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum justo quis massa aliquet, ut ultrices quam bibendum.
+			\end{warn}
+			
+		\subsubsection{Link}
+		
+			\begin{lstlisting}[language=TeX, caption=Link environment code.]
+\mdfdefinestyle{link}{
+	topline=false, bottomline=false,
+	leftline=false, rightline=false,
+	nobreak,
+	singleextra={%
+		\fill[taublue](P-|O)circle[radius=0.4em];		% black
+		\node at(P-|O){\color{white}\tiny\faLink};
+		\draw[very thick,color=taublue](P-|O)++(0,-0.8em)--(O);
+	}
+}
+
+\newenvironment{link}[1][\color{taublue}Link:]{
+	\medskip
+	\begin{mdframed}[style=link]
+		\noindent{\textbf{#1}}
+	}{
+	\end{mdframed}
+} \end{lstlisting}
+			
+			\begin{link}
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum justo quis massa aliquet, ut ultrices quam bibendum.
+			\end{link}
+			
+	\subsection{Alternative title}
+	
+            If you want to modify the title of tau-book class as mentioned in the document, you can copy and paste the following code into ``tau-book.cls'' in the corresponding section.
+	
+		\begin{lstlisting}[language=TeX, caption=Alternative title.]
+\renewcommand{\@maketitle}{
+		\vskip-24pt
+	{\color{taublue}\rule{\linewidth}{0.5pt}}
+		\vskip3pt
+	{\centering\bfseries\LARGE\color{taublue}\@title\par}
+		\vskip8pt
+	{\centering\normalsize\@author\par}
+		\vskip8pt
+	{\centering\fontsize{7pt}{8pt}\selectfont\@professor\par}
+		\vskip3pt
+	{\color{taublue}\rule{\linewidth}{0.5pt}}
+	\vskip15pt
+ } \end{lstlisting}
+		
+\begin{center}
+	Enjoy writing with tau-book class \faGrinBeam[regular] \\ 
+	\vskip10pt
+	\textit{Contact:} \\
+	\faLink\ \href{https://sites.google.com/view/memo-notess/p%C3%A1gina-principal}{https://sites.google.com/memo-notess} \\
+	\faEnvelope[regular]\ memo.notess1@gmail.com \\
+	\faInstagram\ memo.notess 
+\end{center}
+					
+%----------------------------------------------------------
+
+\printbibliography
+
+%----------------------------------------------------------
+
+\end{document}
